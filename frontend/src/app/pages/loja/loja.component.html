@@ -1,0 +1,20 @@
+<div class="container">
+  <h5>Nossos Produtos</h5>
+  <div class="card">
+    <table class="table">
+      <th scope="col">Nome</th>
+      <th scope="col">Descrição</th>
+      <th scope="col">Tipo de Produto</th>
+      <th scope="col">Unidades</th>
+      <th scope="col">Preço</th>
+      <tr *ngFor="let produto of produtos">
+        <td>{{produto.nome}}</td>
+        <td>{{produto.descricao}}</td>
+        <td>{{produto.grupo.nome}}</td>
+        <td>{{produto.qtdeEstoque}} un</td>
+        <td>R$ {{produto.preco}}</td>
+        <td><button type="button" class="btn btn-outline-primary" (click)="adicionarProduto(produto)">Comprar</button></td>
+      </tr>
+    </table>
+  </div>
+</div>

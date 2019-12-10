@@ -1,0 +1,59 @@
+<div class="container">
+  <h5>Produtos</h5>
+  <div class="card-body">
+    <div class="row">
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="inputNome">Nome do Produto</label>
+          <input type="text" class="form-control" name="inputNome" [(ngModel)]="obj.nome">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputPreco">Preço</label>
+          <input type="text" class="form-control" name="inputPreco" [(ngModel)]="obj.preco">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputEstoque">Quantidade em Estoque</label>
+          <input type="text" class="form-control" name="inputEstoque" [(ngModel)]="obj.qtdeEstoque">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputUnidade">Unidade medida</label>
+          <input type="text" class="form-control" name="inputUnidade" [(ngModel)]="obj.und">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputGpId">Grupo do Produto</label>
+          <input type="text" class="form-control" name="inputGpId" [(ngModel)]="obj.grupo.id">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputDesc">Descrição do Produto</label>
+          <input type="text" class="form-control" name="inputDesc" [(ngModel)]="obj.descricao">
+        </div>
+        <div class="form-group col-md-4 align-self-end">
+          <button type="button" class="btn btn-outline-primary" (click)="salvar()">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <table class="table">
+      <th scope="col">Nome do Produto</th>
+      <th scope="col">Preço</th>
+      <th scope="col">Qtd. Estoque</th>
+      <th scope="col">Und</th>
+      <th scope="col">Grupo</th>
+      <th scope="col">Descrição</th>
+      <tr *ngFor="let produto of lista">
+        <td>{{produto.nome}}</td>
+        <td>{{produto.preco}}</td>
+        <td>{{produto.qtdeEstoque}}</td>
+        <td>{{produto.und}}</td>
+        <td>{{produto.grupo.nome}}</td>
+        <td>{{produto.descricao}}</td>
+        <td><button type="button" class="btn btn-outline-warning mr-auto"
+                    (click)="carregarDados(produto)">Editar</button></td>
+        <td><button type="button" class="btn btn-outline-danger mr-auto" (click)="deletar(produto.id)">Deletar</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

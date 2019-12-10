@@ -1,0 +1,99 @@
+<div class="container">
+  <h5>Clientes</h5>
+  <div class="card-body">
+    <div class="row">
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label for="inputNome">Nome</label>
+          <input type="text" class="form-control" name="inputNome" [(ngModel)]="obj.nome">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputCpf">CPF</label>
+          <input type="text" class="form-control" name="inputCpf" [(ngModel)]="obj.cpf">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputRg">RG</label>
+          <input type="text" class="form-control" name="inputRg" [(ngModel)]="obj.rg">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputDataNasc">Data de Nascimento</label>
+          <input type="date" class="form-control" name="inputDataNasc" [(ngModel)]="obj.dataNasc">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputRua">Rua</label>
+          <input type="text" class="form-control" name="inputRua" [(ngModel)]="obj.rua">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputBairro">Bairro</label>
+          <input type="text" class="form-control" name="inputBairro" [(ngModel)]="obj.bairro">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputCidade">Cidade</label>
+          <input type="text" class="form-control" name="inputCidade" [(ngModel)]="obj.cidade">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputCep">CEP</label>
+          <input type="text" class="form-control" name="inputCep" [(ngModel)]="obj.cep">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputUf">UF</label>
+          <input type="text" class="form-control" name="inputUf" [(ngModel)]="obj.uf">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputEmail">E-mail</label>
+          <input type="text" class="form-control" name="inputEmail" [(ngModel)]="obj.email">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputFone1">Número Celular</label>
+          <input type="text" class="form-control" name="inputFone1" [(ngModel)]="obj.fone1">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputFone2">Telefone Fixo</label>
+          <input type="text" class="form-control" name="inputFone2" [(ngModel)]="obj.fone2">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="inputSenha">Senha</label>
+          <input type="password" class="form-control" name="inputSenha" [(ngModel)]="obj.senha">
+        </div>
+        <div class="form-group col-md-4 align-self-end">
+          <button type="button" class="btn btn-outline-primary" (click)="salvar()">Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <table class="table">
+      <th scope="col">Nome</th>
+      <th scope="col">CPF</th>
+      <th scope="col">RG</th>
+      <th scope="col">Data de Nascimento</th>
+      <th scope="col">Rua</th>
+      <th scope="col">Bairro</th>
+      <th scope="col">Cidade</th>
+      <th scope="col">CEP</th>
+      <th scope="col">UF</th>
+      <th scope="col">Email</th>
+      <th scope="col">Celular</th>
+      <th scope="col">Fixo</th>
+      <tr *ngFor="let cliente of lista">
+        <td>{{cliente.nome}}</td>
+        <td>{{cliente.cpf}}</td>
+        <td>{{cliente.rg}}</td>
+        <td>{{cliente.dataNasc}}</td>
+        <td>{{cliente.rua}}</td>
+        <td>{{cliente.bairro}}</td>
+        <td>{{cliente.cidade}}</td>
+        <td>{{cliente.cep}}</td>
+        <td>{{cliente.uf}}</td>
+        <td>{{cliente.email}}</td>
+        <td>{{cliente.fone1}}</td>
+        <td>{{cliente.fone2}}</td>
+        <td><button type="button" class="btn btn-outline-warning mr-auto"
+                    (click)="carregarDados(cliente)">Editar</button></td>
+        <td><button type="button" class="btn btn-outline-danger mr-auto" (click)="deletar(cliente.id)">Deletar</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
